@@ -1,35 +1,35 @@
 # Smart Vision - Face, Hand, and Object Detection 🧠📷
 
-Project ini menggunakan **OpenCV**, **MediaPipe**, dan **YOLOv8** untuk mendeteksi **wajah**, **tangan/jari**, dan **objek apa saja** secara **real-time** melalui kamera.
+This project uses **OpenCV**, **MediaPipe**, and **YOLOv8** to detect **faces**, **hands/fingers**, and **any objects** in **real-time** through a camera.
 
 ---
 
-## **✨ Fitur Utama**
-✅ Deteksi wajah dan senyuman secara real-time  
-✅ Deteksi tangan & jari dengan skeleton akurat  
-✅ Deteksi berbagai objek menggunakan YOLOv8  
-✅ Ukuran kamera kecil (**640x480**) → performa lebih cepat  
-✅ Mudah dikembangkan untuk project AI lebih lanjut
+## **✨ Main Features**
+✅ Real-time face and smile detection  
+✅ Hand & finger detection with an accurate skeleton  
+✅ Detection of various objects using YOLOv8  
+✅ Small camera size (**640x480**) → faster performance  
+✅ Easy to extend for further AI projects
 
 ---
 
-## **🛠️ Teknologi yang Digunakan**
+## **🛠️ Technologies Used**
 - [Python 3.11](https://www.python.org/)
-- [OpenCV](https://opencv.org/) → deteksi wajah & manipulasi gambar
-- [MediaPipe](https://mediapipe.dev/) → deteksi tangan & jari
-- [YOLOv8](https://github.com/ultralytics/ultralytics) → deteksi objek real-time
+- [OpenCV](https://opencv.org/) → face detection & image manipulation
+- [MediaPipe](https://mediapipe.dev/) → hand & finger detection
+- [YOLOv8](https://github.com/ultralytics/ultralytics) → real-time object detection
 
 ---
 
-## **📂 Struktur Project**
+## **📂 Project Structure**
 ```
 
 smart\_vision/
-│── main.py                     # Program utama
+│── main.py                     # Main program
 │── detectors/
-│     ├── face.py               # Deteksi wajah & senyuman
-│     ├── hand.py               # Deteksi tangan & jari
-│     ├── object.py             # Deteksi objek dengan YOLOv8
+│     ├── face.py               # Face & smile detection
+│     ├── hand.py               # Hand & finger detection
+│     ├── object.py             # Object detection with YOLOv8
 │── haarcascades/
 │     ├── haarcascade\_frontalface\_default.xml
 │     ├── haarcascade\_smile.xml
@@ -39,23 +39,23 @@ smart\_vision/
 
 ---
 
-## **⚡ Instalasi**
+## **⚡ Installation**
 
-### **1. Clone Repository**
+### **1. Clone the Repository**
 ```bash
 git clone https://github.com/username/smart_vision.git
 cd smart_vision
 ````
 
-### **2. Install Dependency**
+### **2. Install Dependencies**
 
-Pastikan Python **3.11** sudah terinstall, lalu jalankan:
+Make sure Python **3.11** is installed, then run:
 
 ```bash
 pip install opencv-python mediapipe ultralytics
 ```
 
-### **3. Jalankan Program**
+### **3. Run the Program**
 
 ```bash
 python main.py
@@ -63,66 +63,66 @@ python main.py
 
 ---
 
-## **📸 Cara Kerja**
+## **📸 How It Works**
 
-* **Deteksi Wajah** → OpenCV Haarcascade mendeteksi wajah & menampilkan kotak biru.
-* **Deteksi Senyuman** → Jika senyum, muncul tulisan **"Smiling :)"**.
-* **Deteksi Jari & Tangan** → MediaPipe menggambar skeleton tangan secara real-time.
-* **Deteksi Objek** → YOLOv8 menandai objek di sekitar dengan kotak dan label.
+* **Face Detection** → OpenCV Haarcascade detects faces and draws a blue box.
+* **Smile Detection** → When a smile is detected, the text **"Smiling :)"** appears.
+* **Finger & Hand Detection** → MediaPipe draws the hand skeleton in real-time.
+* **Object Detection** → YOLOv8 marks nearby objects with boxes and labels.
 
 ---
 
-## **🎯 Cara Menggunakan**
+## **🎯 How to Use**
 
-| Fungsi               | Keterangan                   |
+| Function               | Description                   |
 | -------------------- | ---------------------------- |
-| Tekan **q**          | Keluar dari program          |
-| Lihat kotak biru     | Wajah terdeteksi             |
-| Lihat skeleton hijau | Tangan & jari terdeteksi     |
-| Kotak kuning + label | Objek terdeteksi oleh YOLOv8 |
+| Press **q**          | Exit the program          |
+| Blue box appears     | Face detected             |
+| Green skeleton appears | Hands & fingers detected     |
+| Yellow box + label | Object detected by YOLOv8 |
 
 ---
 
-## **📌 Tips Optimasi**
+## **📌 Optimization Tips**
 
-Kalau performa lambat, kamu bisa:
+If performance is slow, you can:
 
-1. Gunakan model YOLOv8 lebih kecil:
+1. Use a smaller YOLOv8 model:
 
-   ```python
-   self.model = YOLO("yolov8n.pt")  # nano (paling ringan)
-   ```
-2. Perkecil ukuran kamera:
+    ```python
+    self.model = YOLO("yolov8n.pt")  # nano (lightest)
+    ```
+2. Reduce the camera resolution:
 
-   ```python
-   cap.set(3, 480)
-   cap.set(4, 360)
-   ```
-3. Batasi objek yang dideteksi:
+    ```python
+    cap.set(3, 480)
+    cap.set(4, 360)
+    ```
+3. Limit the objects to be detected:
 
-   ```python
-   self.model.predict(frame, classes=[0, 67])  # Contoh: hanya deteksi orang & ponsel
-   ```
-
----
-
-## **🧠 Rencana Pengembangan**
-
-* [ ] Integrasi **face recognition** → kenali wajah spesifik
-* [ ] Deteksi **gesture tangan** → kendalikan aplikasi
-* [ ] Tambahkan **tracking objek** untuk FPS lebih cepat
-* [ ] Integrasi dengan **Flask / Streamlit** untuk dashboard AI
+    ```python
+    self.model.predict(frame, classes=[0, 67])  # Example: only detect people & phones
+    ```
 
 ---
 
-## **📄 Lisensi**
+## **🧠 Development Roadmap**
 
-Project ini dibuat untuk tujuan pembelajaran dan pengembangan teknologi Computer Vision.
-Bebas digunakan dan dimodifikasi.
+* [ ] Integrate **face recognition** → recognize specific faces
+* [ ] **Hand gesture** detection → control applications
+* [ ] Add **object tracking** for higher FPS
+* [ ] Integration with **Flask / Streamlit** for an AI dashboard
+
+---
+
+## **📄 License**
+
+This project was created for educational purposes and Computer Vision technology development.
+Free to use and modify.
 
 ---
 
 ## **👤 Author**
 
 **Romi**
-Mahasiswa IT • Computer Vision & AI Enthusiast
+IT Student • Computer Vision & AI Enthusiast
