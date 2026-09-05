@@ -126,3 +126,7 @@ Free to use and modify.
 
 **Romi**
 IT Student • Computer Vision & AI Enthusiast
+
+<!-- last-updated -->
+_Last updated: 2026-09-05_
+
